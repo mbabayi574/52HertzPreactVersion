@@ -1,17 +1,129 @@
 /* Global styles */
 html {
-    background-color: #e8ffff;
-    color: #1e1e2e;
+  background-color: #e8ffff;
+  color: #1e1e2e;
 }
 
 a {
-    user-select: none;
+  user-select: none;
 }
 
 /* Theme Icon */
 html.dark {
-    background-color: #1e1e2e;
-    color: #fdebf3;
+  background-color: #1e1e2e;
+  color: #fdebf3;
+}
+
+.dark .light-image {
+  filter: invert(1);
+}
+
+body {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Retro Crafts";
+  src: url("/fonts/borensa.regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Drafting Mono";
+  src: url("/fonts/drafting-mono.semibold.ttf") format("truetype");
+}
+
+/* Headings */
+h1,
+h2 {
+  font-family: "Retro Crafts", cursive;
+  font-weight: normal;
+  user-select: none;
+}
+
+h1 {
+  font-size: 2.6em;
+  margin: 0;
+}
+
+h2 {
+  text-decoration: underline #3b80ff;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+  font-size: 2.1em;
+  margin-bottom: 0;
+}
+
+/* Paragraphs */
+p {
+  font-family: "Drafting Mono", sans-serif;
+  text-align: justify;
+  font-size: 1.2em;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+/* Logos */
+.logo {
+  margin: 20px 0 0;
+  text-align: center;
+
+  img {
+    -webkit-user-drag: none;
+    border-radius: 50%;
+  }
+}
+
+.unselectable {
+  user-select: none;
+  cursor: default;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.title-link,
+.nav-links {
+  font-family: "Retro Crafts", cursive;
+  font-size: 1.3rem;
+}
+
+.one-line-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title-link a,
+.nav-links a {
+  color: #1e1e2e;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin: 0 13px;
+}
+
+a:focus,
+.nav-links a:hover,
+.title-link a:hover {
+  text-decoration: underline #32ac14;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.nav-links {
+  font-family: "Drafting Mono", sans-serif;
+  font-size: 1.115rem;
+  text-align: right;
 }
 
 .dark .title-link a,
@@ -19,148 +131,36 @@ html.dark {
 .dark .card-txt,
 .dark .nav-links a,
 .dark .link-card > a {
-    color: #fdebf3;
-}
-
-.dark .light-image {
-    filter: invert(1);
-}
-
-body {
-    max-width: 540px;
-    margin: 0 auto;
-    text-align: justify;
-}
-
-/* Fonts */
-
-@font-face {
-    font-family: "Retro Crafts";
-    src: url("/fonts/borensa.regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Drafting Mono";
-    src: url("/fonts/drafting-mono.semibold.ttf") format("truetype");
-}
-
-/* Headings */
-h1,
-h2 {
-    font-family: "Retro Crafts", cursive;
-    font-weight: normal;
-    user-select: none;
-}
-
-h1 {
-    font-size: 2.6em;
-    margin: 0;
-}
-
-h2 {
-    text-decoration: underline #3b80ff;
-    text-decoration-thickness: 4px;
-    text-underline-offset: 6px;
-    font-size: 2.1em;
-    margin-bottom: 0;
-}
-
-/* Paragraphs */
-p {
-    font-family: "Drafting Mono", sans-serif;
-    text-align: justify;
-    font-size: 1.2em;
-    hyphens: auto;
-    line-height: 1.5;
-}
-
-/* Logos */
-.logo {
-    margin: 20px 0 0;
-    text-align: center;
-
-    img {
-        -webkit-user-drag: none;
-        border-radius: 50%;
-    }
-}
-
-.unselectable {
-    user-select: none;
-    cursor: default;
-}
-
-/* Navigation Bar */
-.nav-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.title-link,
-.nav-links {
-    font-family: "Retro Crafts", cursive;
-    font-size: 1.3rem;
-}
-
-.one-line-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.title-link a,
-.nav-links a {
-    color: #1e1e2e;
-    text-decoration: none;
-}
-
-.title-link a:hover,
-.nav-links a:hover,
-a:focus {
-    text-decoration: underline #32ac14;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-}
-
-.nav-links {
-    font-family: "Drafting Mono", sans-serif;
-    font-size: 1.115rem;
-    text-align: right;
-}
-
-.nav-links a {
-    margin: 0 13px;
+  color: #fdebf3;
 }
 
 /* Card listing */
 .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  gap: 1rem;
+  padding: 0;
 }
 
 /* Media Query */
 @media only screen and (width <= 600px) {
-    body {
-        width: 320px;
-    }
+  body {
+    width: 320px;
+  }
 
-    .nav-bar {
-        display: initial;
-    }
+  .nav-bar {
+    display: initial;
+  }
 
-    .title-link {
-        text-align: center;
-    }
+  .title-link {
+    text-align: center;
+  }
 
-    .nav-links {
-        text-align: center;
-    }
+  .nav-links {
+    text-align: center;
+  }
 
-    .nav-links a {
-        margin: 0 11px;
-    }
+  .nav-links a {
+    margin: 0 11px;
+  }
 }

@@ -1,0 +1,41 @@
+div#wave {
+  position: relative;
+  margin-top: 10vh;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#wave .dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: black;
+  animation: wave 1.3s ease-in-out infinite;
+}
+
+.dark div#wave .dot {
+  background: white;
+}
+
+div#wave .dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+div#wave .dot:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}

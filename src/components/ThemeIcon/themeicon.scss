@@ -1,0 +1,25 @@
+.theme-toggle {
+  border: 0;
+  background: none;
+}
+
+.theme-toggle:hover {
+  cursor: pointer;
+  transform: rotate(10deg);
+}
+
+.moon {
+  fill: #1e1e2e;
+}
+
+.sun {
+  fill: transparent;
+}
+
+.dark .moon {
+  fill: transparent;
+}
+
+.dark .sun {
+  fill: #fdebf3;
+}

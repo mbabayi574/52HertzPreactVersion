@@ -1,5 +1,10 @@
-import { render } from 'preact'
-import { App } from './app.tsx'
-import './index.css'
+import App from "./app.tsx";
+import { render } from "preact";
 
-render(<App />, document.getElementById('app')!)
+const rootElement = document.getElementById("app");
+
+if (rootElement !== null) {
+  render(<App />, rootElement);
+} else {
+  console.error("Couldn't find root element to mount the app");
+}

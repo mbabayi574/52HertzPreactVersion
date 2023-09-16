@@ -1,0 +1,55 @@
+.home-page-style {
+  /* small */
+  .home-small {
+    background-color: #584966;
+    color: #fdebf3;
+    border-radius: 6px;
+    font-family: "Drafting Mono", sans-serif;
+    font-weight: 600;
+    padding: 0.3em 0.6em 0.2em;
+  }
+
+  /* Button */
+  button {
+    background: rgb(0 0 0 / 0%);
+    border: 2px solid #78c2ad;
+    border-radius: 8px;
+    color: #78c2ad;
+    font:
+      600 16px Aileron,
+      sans-serif;
+    padding: 8px 16px;
+    transition:
+      background-color 0.4s,
+      color 0.4s;
+  }
+
+  button:hover {
+    background-color: #78c2ad;
+    color: #fdebf3;
+    cursor: pointer;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  /* Skill images */
+  .link-images img {
+    margin: 16px 4px;
+    -webkit-user-drag: none;
+  }
+
+  .dev-logo {
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  @media only screen and (width <= 600px) {
+    .link-images img {
+      height: 30px;
+      width: 30px;
+      margin: 16px 1px;
+    }
+  }
+}
