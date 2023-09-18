@@ -12,7 +12,7 @@ const Card = (props: CardProps): JSX.Element => {
   return (
     <div className="card-style">
       <li className="link-card">
-        <a href={props.href}>
+        <a href={props.href} target="_blank" rel="noreferrer">
           <div className="img">
             <img
               width="226"

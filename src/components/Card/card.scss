@@ -12,6 +12,11 @@
     line-height: 1.4;
     border-radius: 8px;
     color: #fdebf3;
+    transition: transform 0.35s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .img {
@@ -36,9 +41,5 @@
     text-indent: 0;
     text-align: center;
     margin: 0.5rem 0 0;
-  }
-
-  .link-card:hover {
-    transform: scale(1.05);
   }
 }

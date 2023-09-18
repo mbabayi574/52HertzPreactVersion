@@ -1,8 +1,15 @@
 import type { JSX } from "preact";
+import Typewriter from "typewriter-effect";
 
 import "./home.scss";
 
 const Home = (): JSX.Element => {
+  const jobs = [
+    "Software Engineer",
+    "Frontend Developer",
+    "Maybe just a learner :)",
+  ];
+
   return (
     <>
       <div className="home-page-style">
@@ -17,7 +24,17 @@ const Home = (): JSX.Element => {
           />
         </div>
         <h1>52Hertz</h1>
-        <small className="home-small">Software Engineer</small>
+        <small className="home-small">
+          <Typewriter
+            options={{
+              strings: jobs,
+              autoStart: true,
+              loop: true,
+              delay: 100,
+              deleteSpeed: 50,
+            }}
+          />
+        </small>
         <h2>About Me</h2>
         <p>
           I am a software engineer with a passion for Web Development. <br /> I

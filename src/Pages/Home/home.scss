@@ -1,12 +1,29 @@
 .home-page-style {
   /* small */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
   .home-small {
+    color: white;
     background-color: #584966;
-    color: #fdebf3;
     border-radius: 6px;
     font-family: "Drafting Mono", sans-serif;
     font-weight: 600;
-    padding: 0.3em 0.6em 0.2em;
+    padding: 0.2em 0.5em;
+    display: inline-block;
   }
 
   /* Button */
@@ -35,6 +52,10 @@
   }
 
   /* Skill images */
+  .link-images {
+    display: flex;
+  }
+
   .link-images img {
     margin: 16px 4px;
     -webkit-user-drag: none;
@@ -43,13 +64,5 @@
   .dev-logo {
     background-color: white;
     border-radius: 50%;
-  }
-
-  @media only screen and (width <= 600px) {
-    .link-images img {
-      height: 30px;
-      width: 30px;
-      margin: 16px 1px;
-    }
   }
 }

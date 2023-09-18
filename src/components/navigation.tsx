@@ -1,4 +1,5 @@
 import type { JSX } from "preact/jsx-runtime";
+import { Link } from "wouter";
 import ThemeIcon from "./ThemeIcon/themeicon.tsx";
 
 const Navigation = (): JSX.Element => {
@@ -9,9 +10,9 @@ const Navigation = (): JSX.Element => {
       </div>
 
       <div className="nav-links one-line-wrapper">
-        <a href="/">Home</a>
-        <a href="/works/">Works</a>
-        <a href="/blog/">Blog</a>
+        <Link to="/">Home</Link>
+        <Link to="/works/">Works</Link>
+        <Link to="/blog/">Blog</Link>
         <ThemeIcon />
       </div>
     </div>

@@ -1,29 +1,3 @@
-/* Global styles */
-html {
-  background-color: #e8ffff;
-  color: #1e1e2e;
-}
-
-a {
-  user-select: none;
-}
-
-/* Theme Icon */
-html.dark {
-  background-color: #1e1e2e;
-  color: #fdebf3;
-}
-
-.dark .light-image {
-  filter: invert(1);
-}
-
-body {
-  max-width: 540px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
 /* Fonts */
 
 @font-face {
@@ -34,6 +8,49 @@ body {
 @font-face {
   font-family: "Drafting Mono";
   src: url("/fonts/drafting-mono.semibold.ttf") format("truetype");
+}
+
+* {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  // firefox scrollbar
+  scrollbar-width: none;
+}
+
+/* Global styles */
+html {
+  background-color: #e8ffff;
+  color: #1e1e2e;
+}
+
+/* Theme Icon */
+html.dark {
+  background-color: #1e1e2e;
+  color: #fdebf3;
+}
+
+a {
+  user-select: none;
+}
+
+.dark .light-image {
+  filter: invert(1);
+}
+
+body {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.app-area {
+  position: fixed;
+  width: 700px;
+  margin-top: 3rem;
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  border-radius: 15px;
 }
 
 /* Headings */
@@ -66,29 +83,16 @@ p {
   line-height: 1.5;
 }
 
-/* Logos */
-.logo {
-  margin: 20px 0 0;
-  text-align: center;
-
-  img {
-    -webkit-user-drag: none;
-    border-radius: 50%;
-  }
-}
-
-.unselectable {
-  user-select: none;
-  cursor: default;
-}
-
 /* Navigation Bar */
 .nav-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  position: fixed;
+  top: 0;
+  margin: 0.5rem 0;
+  width: 700px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .title-link,
@@ -126,6 +130,11 @@ a:focus,
   text-align: right;
 }
 
+.card-title,
+.card-txt {
+  color: black;
+}
+
 .dark .title-link a,
 .dark .card-title,
 .dark .card-txt,
@@ -143,24 +152,38 @@ a:focus,
 }
 
 /* Media Query */
-@media only screen and (width <= 600px) {
+@media only screen and (width <= 720px) {
   body {
-    width: 320px;
+    width: 410px;
   }
 
   .nav-bar {
-    display: initial;
+    width: 410px;
   }
 
-  .title-link {
-    text-align: center;
+  .app-area {
+    width: 410px;
   }
+}
 
-  .nav-links {
-    text-align: center;
-  }
+/* Logos */
 
-  .nav-links a {
-    margin: 0 11px;
+.logo {
+  margin: 20px 0 0;
+  text-align: center;
+
+  img {
+    -webkit-user-drag: none;
+    border-radius: 50%;
+    transition: transform 3s ease-in-out;
+
+    &:hover {
+      transform: rotate(-360deg);
+    }
   }
+}
+
+.unselectable {
+  user-select: none;
+  cursor: default;
 }
