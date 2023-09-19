@@ -8,7 +8,8 @@ const Works = (): JSX.Element => {
         <div className="blog-logo">
           <img
             width="150"
-            alt="52Hertz Logo"
+            height="150"
+            alt="Astronaut"
             src="/images/Astrounat.svg"
             onContextMenu={(e) => {
               e.preventDefault();

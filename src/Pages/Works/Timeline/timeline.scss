@@ -1,0 +1,139 @@
+.timeline-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #ccc;
+    left: 50%;
+    margin-left: -1px;
+  }
+}
+
+.timeline-events {
+  padding: 0;
+  list-style-type: none;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.375em 0.375em 0;
+    border-color: transparent transparent #f9f9f9;
+  }
+
+  .timeline-content {
+    padding: 1em;
+    background: #f9f9f9;
+    box-shadow: 0 0.25em 1em rgb(0 0 0 / 10%);
+    border-radius: 0.25em;
+  }
+
+  // Empty Colorful Circle For Start the Timeline
+  .timeline-content-circle {
+    background: #4e6eff;
+    text-align: center;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .emoji {
+      font-size: 2em;
+    }
+  }
+
+  .timeline-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+
+  .timeline-company {
+    margin-bottom: 0.75em;
+    color: #777;
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .timeline-time {
+    text-indent: 0.5em;
+    margin-bottom: 0.75em;
+    color: #777;
+  }
+
+  .timeline-details {
+    margin-bottom: 0;
+    color: #333;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.dark {
+  .timeline-container {
+    .timeline-content {
+      background: #536368;
+      box-shadow: 0 0.25em 1em rgb(125 125 125 / 25%);
+    }
+
+    .timeline-content-circle {
+      background: #001ea3;
+    }
+
+    .timeline-title {
+      color: #fff;
+    }
+
+    .timeline-company {
+      color: #68ff74;
+
+      a {
+        color: #c3ffc8;
+      }
+    }
+
+    .timeline-time {
+      color: #9dc7ff;
+    }
+
+    .timeline-details {
+      color: #fff;
+    }
+  }
+}
