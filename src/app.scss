@@ -1,47 +1,69 @@
-/* Fonts */
+/* stylelint-disable no-descending-specificity */
+$font-family-1: "Boresna Mono", monospace;
+$font-family-2: "Drafting Mono", curved;
+$color-1: #1e1e2e;
+$color-2: #fdebf3;
+$color-3: #3b80ff;
 
 @font-face {
-  font-family: "Retro Crafts";
-  src: url("/fonts/borensa.regular.ttf") format("truetype");
+  font-family: "Boresna Mono"; // Use the actual font name here
+  src:
+    url("./assests/fonts/borensa.regular-webfont.woff2") format("woff2"),
+    url("./assests/fonts/borensa.regular-webfont.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Drafting Mono";
-  src: url("/fonts/drafting-mono.semibold.ttf") format("truetype");
+  font-family: "Drafting Mono"; // Use the actual font name here
+  src:
+    url("./assests/fonts/drafting-mono.semibold-webfont.woff2") format("woff2"),
+    url("./assests/fonts/drafting-mono.semibold-webfont.woff") format("woff");
+  font-display: swap;
 }
 
 * {
   ::-webkit-scrollbar {
     display: none;
   }
-  // firefox scrollbar
-  scrollbar-width: none;
+
+  scrollbar-width: none; // firefox scrollbar
 }
 
-/* Global styles */
 html {
   background-color: #e8ffff;
-  color: #1e1e2e;
+  color: $color-1;
+
+  &.dark {
+    background-color: $color-1;
+    color: $color-2;
+
+    .light-image {
+      filter: invert(1);
+    }
+
+    .hamburger span {
+      background: whitesmoke;
+    }
+
+    .title-link a,
+    .card-title,
+    .card-txt,
+    .nav-links a,
+    .link-card > a {
+      color: $color-2;
+    }
+  }
 }
 
-/* Theme Icon */
-html.dark {
-  background-color: #1e1e2e;
-  color: #fdebf3;
-}
-
-a {
+a,
+h1,
+h2 {
   user-select: none;
-}
-
-.dark .light-image {
-  filter: invert(1);
 }
 
 body {
   max-width: 700px;
   margin: 0 auto;
-  text-align: justify;
 }
 
 .app-area {
@@ -53,12 +75,10 @@ body {
   border-radius: 15px;
 }
 
-/* Headings */
 h1,
 h2 {
-  font-family: "Retro Crafts", cursive;
+  font-family: $font-family-1;
   font-weight: normal;
-  user-select: none;
 }
 
 h1 {
@@ -67,67 +87,87 @@ h1 {
 }
 
 h2 {
-  text-decoration: underline #3b80ff;
+  text-decoration: underline $color-3;
   text-decoration-thickness: 4px;
   text-underline-offset: 6px;
   font-size: 2.1em;
   margin-bottom: 0;
 }
 
-/* Paragraphs */
 p {
-  font-family: "Drafting Mono", sans-serif;
-  text-align: justify;
+  font-family: $font-family-2;
   font-size: 1.2em;
   hyphens: auto;
   line-height: 1.5;
 }
 
-/* Navigation Bar */
 .nav-bar {
   position: fixed;
   top: 0;
   margin: 0.5rem 0;
   width: 700px;
-  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  z-index: 2;
 
-.title-link,
-.nav-links {
-  font-family: "Retro Crafts", cursive;
-  font-size: 1.3rem;
-}
+  .title-link,
+  .nav-links {
+    font-family: $font-family-1;
+    font-size: 1.3rem;
 
-.one-line-wrapper {
-  display: flex;
-  align-items: center;
-}
+    a {
+      color: $color-1;
+      text-decoration: none;
 
-.title-link a,
-.nav-links a {
-  color: #1e1e2e;
-  text-decoration: none;
-}
+      &:focus,
+      &:hover {
+        text-decoration: underline #32ac14;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+      }
+    }
+  }
 
-.nav-links a {
-  margin: 0 13px;
-}
+  .nav-links {
+    font-family: $font-family-2;
+    font-size: 1.115rem;
+    text-align: right;
 
-a:focus,
-.nav-links a:hover,
-.title-link a:hover {
-  text-decoration: underline #32ac14;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
+    a {
+      margin: 0 13px;
+    }
+  }
 
-.nav-links {
-  font-family: "Drafting Mono", sans-serif;
-  font-size: 1.115rem;
-  text-align: right;
+  .icons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 4.5rem;
+    z-index: 5;
+  }
+
+  .hamburger {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 3;
+
+    span {
+      width: 2rem;
+      height: 0.25rem;
+      background: #333;
+      border-radius: 10px;
+      position: relative;
+      transform-origin: 1px;
+      transition: all 0.2s ease-in-out;
+    }
+  }
 }
 
 .card-title,
@@ -135,15 +175,6 @@ a:focus,
   color: black;
 }
 
-.dark .title-link a,
-.dark .card-title,
-.dark .card-txt,
-.dark .nav-links a,
-.dark .link-card > a {
-  color: #fdebf3;
-}
-
-/* Card listing */
 .link-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
@@ -151,22 +182,39 @@ a:focus,
   padding: 0;
 }
 
-/* Media Query */
-@media only screen and (width <= 720px) {
+@media (width <= 720px) {
   body {
     width: 410px;
   }
 
-  .nav-bar {
-    width: 410px;
-  }
-
+  .nav-bar,
   .app-area {
     width: 410px;
   }
 }
 
-/* Logos */
+@media (width <= 480px) {
+  body {
+    width: 300px;
+  }
+
+  .nav-bar {
+    width: 290px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .app-area {
+    width: 300px;
+    height: calc(100vh - 17vh);
+  }
+}
 
 .logo {
   margin: 20px 0 0;

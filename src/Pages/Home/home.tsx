@@ -1,6 +1,16 @@
 import type { JSX } from "preact";
 import Typewriter from "typewriter-effect";
 
+// Resources
+import Logo52Hertz from "../../assests/images/52Hertz.svg";
+import HTML5LOGO from "../../assests/images/dev-icons/html5-plain.svg";
+import CSS3LOGO from "../../assests/images/dev-icons/css3-plain.svg";
+import JavaScriptLOGO from "../../assests/images/dev-icons/javascript-plain.svg";
+import TypeScriptLOGO from "../../assests/images/dev-icons/typescript-plain.svg";
+import JavaLOGO from "../../assests/images/dev-icons/java-original.svg";
+import SpringLOGO from "../../assests/images/dev-icons/spring-original.svg";
+import OracleLOGO from "../../assests/images/dev-icons/oracle-original.svg";
+
 import "./home.scss";
 
 const Home = (): JSX.Element => {
@@ -18,7 +28,7 @@ const Home = (): JSX.Element => {
             width="150"
             height="150"
             alt="52Hertz Logo"
-            src="/images/52Hertz.svg"
+            src={Logo52Hertz}
             onContextMenu={(e) => {
               e.preventDefault();
             }}
@@ -64,48 +74,18 @@ const Home = (): JSX.Element => {
             e.preventDefault();
           }}
         >
-          <img
-            width="46"
-            height="46"
-            alt="HTML"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"
-          />
-          <img
-            width="46"
-            height="46"
-            alt="CSS"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"
-          />
-          <img
-            width="46"
-            height="46"
-            alt="JavaScript"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
-          />
-          <img
-            width="46"
-            height="46"
-            alt="TypeScript"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
-          />
-          <img
-            width="46"
-            height="46"
-            alt="Java"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-          />
-          <img
-            width="46"
-            height="46"
-            alt="Spring"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-          />
+          <img width="46" height="46" alt="HTML" src={HTML5LOGO} />
+          <img width="46" height="46" alt="CSS" src={CSS3LOGO} />
+          <img width="46" height="46" alt="JavaScript" src={JavaScriptLOGO} />
+          <img width="46" height="46" alt="TypeScript" src={TypeScriptLOGO} />
+          <img width="46" height="46" alt="Java" src={JavaLOGO} />
+          <img width="46" height="46" alt="Spring" src={SpringLOGO} />
           <img
             className="light-image "
             width="46"
             height="46"
             alt="Oracle"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+            src={OracleLOGO}
           />
         </div>
         <h2>Interests</h2>
@@ -114,9 +94,11 @@ const Home = (): JSX.Element => {
           Helping Society 🕊️, and Working with Children 🧒🏻.
           <br />
           This is how I look at work : I see a family trying to solve a series
-          of problems together; therefore, friendship in the workplace is a
-          critical priority for me. I will be happy to talk with you and gain
-          valuable experiences by meeting you; we may become good friends.
+          of problems together;
+          <br />
+          therefore, friendship in the workplace is a critical priority for me.
+          I will be happy to talk with you and gain valuable experiences by
+          meeting you; we may become good friends.
         </p>
       </div>
     </>

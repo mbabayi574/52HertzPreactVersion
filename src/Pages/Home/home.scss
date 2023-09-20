@@ -58,6 +58,8 @@
   /* Skill images */
   .link-images {
     display: flex;
+    // wrap
+    flex-wrap: wrap;
   }
 
   .link-images img {

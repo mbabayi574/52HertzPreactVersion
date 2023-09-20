@@ -1,6 +1,9 @@
 import "./blog.scss";
 import type { JSX } from "preact";
 
+// Resources
+import Astronaut from "../../assests/images/Astrounat.svg";
+
 const Works = (): JSX.Element => {
   return (
     <>
@@ -10,7 +13,7 @@ const Works = (): JSX.Element => {
             width="150"
             height="150"
             alt="Astronaut"
-            src="/images/Astrounat.svg"
+            src={Astronaut}
             onContextMenu={(e) => {
               e.preventDefault();
             }}

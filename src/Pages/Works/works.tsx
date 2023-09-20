@@ -1,5 +1,8 @@
 import Card from "../../components/Card/card.tsx";
-import PatriotImage from "../../../public/images/projects/patriiot.webp";
+
+// Resources
+import LittlePrincess from "../../assests/images/LittlePrincess.svg";
+import PatriotImage from "../../assests/images/projects/patriiot.webp";
 
 import type { JSX } from "preact";
 import Timeline from "./Timeline/timeline.tsx";
@@ -28,6 +31,33 @@ const WorkExperience = [
       "Monitoring and improving existing educational processes.",
     ],
   },
+  {
+    title: "Fullstack Developer",
+    company: "Raydad",
+    companyLink: "https://www.linkedin.com/company/raydad/",
+    time: "Apr 2021 - Nov 2022",
+    details: [
+      "Building a site to introduce the company",
+      "Building an intelligent system for monitoring countries' technology news, initially designed for the Iranian Embassy in Austria.",
+      "Building a system for monitoring people and managing human resources using the tools collected through Linkedin.",
+      "Building an MVP for a cryptocurrency management system called T-BLOCK.",
+      "Aggregation and evaluation of data collected from the Crunchbase system to present a report to Iran's Nano headquarters.",
+      "UX design of a system to identify people abroad on the order of the National Elite Foundation of Iran",
+    ],
+  },
+];
+
+const Education = [
+  {
+    title: "Bachelor's degree in Computer Engineering",
+    company: "Iran University of Science and Technology",
+    companyLink: "http://www.iust.ac.ir/en",
+    time: "2018 – 2023",
+    details: [
+      "GPA: 2.93 / 4",
+      "Thesis: Design and implementation of Internet of Things infrastructure system along with heart rate monitoring hardware",
+    ],
+  },
 ];
 
 const Works = (): JSX.Element => {
@@ -38,7 +68,7 @@ const Works = (): JSX.Element => {
           width="150"
           height="150"
           alt="Little Princess Logo"
-          src="/images/LittlePrincess.svg"
+          src={LittlePrincess}
           onContextMenu={(e) => {
             e.preventDefault();
           }}
@@ -46,6 +76,8 @@ const Works = (): JSX.Element => {
       </div>
       <h2>Work experience</h2>
       <Timeline emoji="👨‍💻" events={WorkExperience} />
+      <h2>Education</h2>
+      <Timeline emoji="🎓" events={Education} />
       <h2>Projects</h2>
       <ul role="list" class="link-card-grid">
         <Card
@@ -53,7 +85,7 @@ const Works = (): JSX.Element => {
           image={PatriotImage}
           title="Patriot IOT Project"
           body="
-          Patriot IOT Project is a project that I started in 2023 for my bachelor's degree, This is a IoT Devices Management System."
+          Patriot IOT Project is a project that I started in 2023 for my bachelor's degree, Under the supervision of Professor Hosseini Monazzah at Cyber-Physical Systems (CPS) laboratory at IUST. PATRIIoT is an IoT platform that provides Web-scale infrastructure capabilities to support basic and advanced IoT solutions."
         />
       </ul>
     </>
