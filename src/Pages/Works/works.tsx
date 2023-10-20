@@ -1,7 +1,7 @@
 import Card from "../../components/Card/card.tsx";
 
 // Resources
-import LittlePrincess from "../../assests/images/LittlePrincess.svg";
+import Astronuat from "../../assests/images/Astrounat.svg";
 import PatriotImage from "../../assests/images/projects/patriiot.webp";
 
 import type { JSX } from "preact";
@@ -68,7 +68,7 @@ const Works = (): JSX.Element => {
           width="150"
           height="150"
           alt="Little Princess Logo"
-          src={LittlePrincess}
+          src={Astronuat}
           onContextMenu={(e) => {
             e.preventDefault();
           }}
@@ -85,7 +85,7 @@ const Works = (): JSX.Element => {
           image={PatriotImage}
           title="Patriot IOT Project"
           body="
-          Patriot IOT Project is a project that I started in 2023 for my bachelor's degree, Under the supervision of Professor Hosseini Monazzah at Cyber-Physical Systems (CPS) laboratory at IUST. PATRIIoT is an IoT platform that provides Web-scale infrastructure capabilities to support basic and advanced IoT solutions."
+          Patriot IOT Project is a project that I started in 2023 for my bachelor's degree, Under the supervision of Professor Hosseini Monazzahat Cyber-Physical Systems (CPS) laboratory at IUST.PATRIIoT is an IoT platform that provides Web-scale infrastructure capabilities to support basic and advanced IoT solutions."
         />
       </ul>
     </>
